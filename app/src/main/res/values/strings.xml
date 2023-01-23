@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Remote Control</string>
+    <string name="send">Send</string>
+    <string name="up">↑</string>
+    <string name="down">↓</string>
+    <string name="right">→</string>
+    <string name="left">←</string>
+    <string name="click">·</string>
+    <string name="blank">blank</string>
+    <string name="enter">Enter</string>
+    <string name="refresh">Refresh</string>
+    <string name="backspace">Backspace</string>
+</resources>
