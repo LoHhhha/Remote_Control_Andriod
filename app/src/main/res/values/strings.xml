@@ -1,13 +1,18 @@
 <resources>
     <string name="app_name">Remote Control</string>
     <string name="send">Send</string>
-    <string name="up">↑</string>
-    <string name="down">↓</string>
-    <string name="right">→</string>
-    <string name="left">←</string>
-    <string name="click">·</string>
     <string name="blank">blank</string>
     <string name="enter">Enter</string>
     <string name="refresh">Refresh</string>
     <string name="backspace">Backspace</string>
+    <string name="ip_setting">Reserved IP</string>
+    <string name="ip_0">192.168.18.128</string>
+    <string name="ip_1">192.168.1.93</string>
+    <string name="ip">IP</string>
+    <string name="text">Text</string>
+    <string name="set">Set</string>
+    <string name="esc">Esc</string>
+    <string name="remove">Remove</string>
+    <string name="space">Space</string>
+    <string name="btrack">bTrack</string>
 </resources>

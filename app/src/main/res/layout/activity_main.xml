@@ -6,39 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="136dp">
 
         <com.google.android.material.textfield.TextInputEditText
-
             android:id="@+id/sendInput"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/background"
+            android:hint="@string/text"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toStartOf="@+id/sendButton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/IPInput"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         <Button
             android:id="@+id/sendButton"
             android:layout_width="80dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:text="@string/send"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/sendInput"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sendIPButton"
             tools:ignore="TouchTargetSizeCheck" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/IPInput"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="IP"
-            app:layout_constraintBottom_toTopOf="@+id/sendInput"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/background"
+            android:hint="@string/ip"
             app:layout_constraintEnd_toStartOf="@+id/sendIPButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -47,44 +50,46 @@
         <Button
             android:id="@+id/sendIPButton"
             android:layout_width="80dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="@string/send"
-            app:layout_constraintBottom_toTopOf="@+id/sendButton"
+            android:text="@string/set"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sendInput"
-            app:layout_constraintVertical_bias="1.0">
+            app:layout_constraintTop_toBottomOf="@+id/sendInput">
 
             <TableRow
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
                 <Button
+
+                    android:id="@+id/escButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/esc"
+                    style="?android:attr/buttonBarButtonStyle" />
+
+                <Button
                     android:id="@+id/refreshButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/refresh" />
-
-                <Button
-                    android:id="@+id/backspaceButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/backspace" />
+                    android:text="@string/refresh"
+                    style="?android:attr/buttonBarButtonStyle" />
 
                 <Button
                     android:id="@+id/enterButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/enter" />
+                    android:text="@string/enter"
+                    style="?android:attr/buttonBarButtonStyle" />
+
             </TableRow>
 
             <TableRow
@@ -92,68 +97,78 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/NULL"
+                    android:id="@+id/backspaceButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible"
-                    tools:visibility="invisible" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:text="@string/remove"
+                    style="?android:attr/buttonBarButtonStyle" />
 
                 <Button
-
-                    android:id="@+id/upButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/up" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/leftButton"
+                    android:id="@+id/spaceButton"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/left" />
+                    android:text="@string/space"
+                    style="?android:attr/buttonBarButtonStyle" />
 
                 <Button
-                    android:id="@+id/clickButton"
+                    android:id="@+id/enterTrackPad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/click" />
+                    android:text="@string/btrack"
+                    style="?android:attr/buttonBarButtonStyle" />
 
-                <Button
-                    android:id="@+id/rightButton"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/right" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <Button
-                    android:id="@+id/downButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/down" />
             </TableRow>
 
         </TableLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/sTrackPad"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/Push"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toEndOf="@+id/_Push"
+            app:layout_constraintTop_toBottomOf="@+id/IPInput" />
+
+        <TextView
+            android:id="@+id/Get"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toEndOf="@+id/_Get"
+            app:layout_constraintTop_toBottomOf="@+id/Push" />
+
+        <TextView
+            android:id="@+id/_Push"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Push: "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/IPInput" />
+
+        <TextView
+            android:id="@+id/_Get"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Get:  "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/_Push" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
