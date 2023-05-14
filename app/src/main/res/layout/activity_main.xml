@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".MainActivity">
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="136dp">
+        android:layout_height="match_parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/sendInput"
@@ -45,7 +44,7 @@
             app:layout_constraintEnd_toStartOf="@+id/sendIPButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="192.168.18.128" />
+            tools:text="" />
 
         <Button
             android:id="@+id/sendIPButton"
@@ -71,24 +70,24 @@
                 <Button
 
                     android:id="@+id/escButton"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/esc"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:text="@string/esc" />
 
                 <Button
                     android:id="@+id/refreshButton"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/refresh"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:text="@string/refresh" />
 
                 <Button
                     android:id="@+id/enterButton"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/enter"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:text="@string/enter" />
 
             </TableRow>
 
@@ -98,24 +97,24 @@
 
                 <Button
                     android:id="@+id/backspaceButton"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/remove"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:text="@string/remove" />
 
                 <Button
                     android:id="@+id/spaceButton"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/space"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:text="@string/space" />
 
                 <Button
-                    android:id="@+id/enterTrackPad"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/enterCMD"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/btrack"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:text="CMD" />
 
             </TableRow>
 
@@ -125,52 +124,105 @@
             android:id="@+id/linearLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/wheelUp"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="30dp"
+                    android:layout_height="150dp"
+                    android:text="↑" />
+
+                <Button
+                    android:id="@+id/wheelDown"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="30dp"
+                    android:layout_height="150dp"
+                    android:text="↓" />
+            </LinearLayout>
 
             <Button
                 android:id="@+id/sTrackPad"
                 android:layout_width="match_parent"
                 android:layout_height="300dp" />
+
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/Push"
+        <Button
+            android:id="@+id/enterTrackPad"
+            style="?android:attr/buttonBarButtonStyle"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            app:layout_constraintStart_toEndOf="@+id/_Push"
-            app:layout_constraintTop_toBottomOf="@+id/IPInput" />
+            android:text="@string/btrack"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <TextView
-            android:id="@+id/Get"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ScrollView
+            android:id="@+id/sv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginTop="5dp"
-            app:layout_constraintStart_toEndOf="@+id/_Get"
-            app:layout_constraintTop_toBottomOf="@+id/Push" />
+            android:fadeScrollbars="false"
+            android:scrollbarStyle="outsideInset"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/_Push"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/_Push"
+            app:layout_constraintTop_toBottomOf="@+id/IPInput">
+
+            <TextView
+                android:id="@+id/Push"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </ScrollView>
 
         <TextView
             android:id="@+id/_Push"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Push: "
+            android:text="@string/push"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/IPInput" />
+
+        <ScrollView
+            android:id="@+id/sv2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:fadeScrollbars="false"
+            android:scrollbarStyle="outsideInset"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/_Get"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/_Get"
+            app:layout_constraintTop_toBottomOf="@+id/sv">
+
+            <TextView
+                android:id="@+id/Get"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </ScrollView>
 
         <TextView
             android:id="@+id/_Get"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Get:  "
+            android:text="@string/get"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/_Push" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</LinearLayout>
+</ScrollView>

@@ -1,19 +1,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.loha.demo0.MainActivity">
+    tools:context="com.loha.remotecontrol.MainActivity">
     <item
-        android:id="@+id/reservedIP"
-        android:orderInCategory="100"
-        android:title="@string/ip_setting"
-        app:showAsAction="never">
-        <menu>
-            <item
-                android:id="@+id/IP_0"
-                android:title="@string/ip_0" />
-            <item
-                android:id="@+id/IP_1"
-                android:title="@string/ip_1" />
-        </menu>
-    </item>
+        android:id="@+id/testConnection"
+        android:orderInCategory="2"
+        android:title="@string/connect_test" />
+    <item
+        android:id="@+id/exit"
+        android:orderInCategory="3"
+        android:title="End Server" />
+    <item
+    android:id="@+id/help"
+    android:orderInCategory="4"
+    android:title="@string/help" />
 </menu>

@@ -1,0 +1,25 @@
+<?xml version ="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:shortcutId="trackpad_sc"
+        android:shortcutShortLabel="@string/trackpad_s_sc"
+        android:shortcutLongLabel="@string/trackpad_l_sc">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.loha.remotecontrol"
+            android:targetClass="com.loha.remotecontrol.MouseActivity" />
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:shortcutId="CMD_sc"
+        android:shortcutShortLabel="@string/cmd_s_sc"
+        android:shortcutLongLabel="@string/cmd_l_sc">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.loha.remotecontrol"
+            android:targetClass="com.loha.remotecontrol.CmdActivity" />
+    </shortcut>
+
+</shortcuts>

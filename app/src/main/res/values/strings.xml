@@ -9,10 +9,20 @@
     <string name="ip_0">192.168.18.128</string>
     <string name="ip_1">192.168.1.93</string>
     <string name="ip">IP</string>
-    <string name="text">Text</string>
+    <string name="text">Send text to screen</string>
     <string name="set">Set</string>
     <string name="esc">Esc</string>
     <string name="remove">Remove</string>
     <string name="space">Space</string>
-    <string name="btrack">bTrack</string>
+    <string name="btrack">Bigger</string>
+    <string name="help">Help</string>
+    <string name="author">by LoHhhha</string>
+    <string name="connect_test">Connect Test</string>
+    <string name="push">Push:</string>
+    <string name="get">Get:</string>
+    <string name="not_accept_reply">Not Accept Reply.</string>
+    <string name="trackpad_s_sc">Trackpad</string>
+    <string name="trackpad_l_sc">Open Trackpad</string>
+    <string name="cmd_s_sc">CMD</string>
+    <string name="cmd_l_sc">Open CMD</string>
 </resources>

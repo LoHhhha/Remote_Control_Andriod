@@ -13,9 +13,18 @@ public class SendFuture implements Callable<String> {
     private final String needSendMessage;
     private final String ServerIP;
 
+    private final int TimeOut;
+
     public SendFuture(String message, String IP) {
         needSendMessage = message;
         ServerIP = IP;
+        TimeOut=200;
+    }
+
+    public SendFuture(String message, String IP,int time) {
+        needSendMessage = message;
+        ServerIP = IP;
+        TimeOut=time;
     }
 
     @Override
@@ -23,7 +32,7 @@ public class SendFuture implements Callable<String> {
         String ret = null;
         byte[] buf = new byte[1024];
         try (DatagramSocket socket = new DatagramSocket()) {
-            socket.setSoTimeout(200);
+            socket.setSoTimeout(TimeOut);
             byte[] bufSend = needSendMessage.getBytes();
             DatagramPacket packet = new DatagramPacket(bufSend, bufSend.length, InetAddress.getByName(ServerIP), 8888);
             socket.send(packet);

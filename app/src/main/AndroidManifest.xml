@@ -16,21 +16,41 @@
         android:theme="@style/Theme.RemoteControl"
         tools:targetApi="31">
         <activity
+            android:name=".CmdActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"
+            android:label="CMD"/>
+        <activity
+            android:name=".HelpActivity"
+            android:exported="false"
+            android:label="Help"/>
+        <activity
             android:name=".MouseActivity"
-            android:label="Trackpad"
-            android:exported="true"/>
+            android:screenOrientation="nosensor"
+            android:exported="true"
+            android:label="Trackpad" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+
         </activity>
+
+
     </application>
 
 </manifest>
